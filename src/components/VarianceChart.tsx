@@ -15,7 +15,7 @@ export default function VarianceChart({ rows, selected, onSelect }: Props) {
   const total = totals(rows);
 
   return <div className="variance-chart">
-    <div className="chart-heading"><div><h3>{min < 0 ? 'Budget variance by cost center' : 'Over-budget contribution by cost center'}</h3><p>Actual − budget · USD thousands</p></div><span className="chart-hint">Select a row to explore <ArrowRight size={13} /></span></div>
+    <div className="chart-heading"><div><h3>Budget variance by cost center</h3><p>Actual − budget · USD thousands</p></div><span className="chart-hint">Select a row to explore <ArrowRight size={13} /></span></div>
     <div className="chart-column-labels"><span>Cost center</span><span>Variance contribution</span><span>USD</span></div>
     <div className="bar-rows" role="group" aria-label="Budget variance by cost center">
       {rows.map(row => {

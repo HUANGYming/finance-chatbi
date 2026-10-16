@@ -41,7 +41,7 @@ export default function AnalysisPanel({ report, view, selectedCenter, busy, onPe
   return <main className="analysis-main" id="analysis" aria-label="Analysis workspace" aria-busy={busy}>
     <div className="analysis-content">
       <div className="report-topline"><span className="eyebrow">Budget performance <span className="breadcrumb-slash">/</span> {report.periodLabel}</span><button className="button button-quiet export-button" aria-label="Export CSV" onClick={() => exportCsv(report.rows, report.period)}><Download size={15} /><span>Export CSV</span></button></div>
-      <h1>{total.variance >= 0 ? 'Where did Opex exceed budget?' : 'Where did Opex come in below budget?'}</h1>
+      <h1>{report.periodLabel} Opex vs budget</h1>
       <p className="report-description">Monthly operating expenses <span>·</span> {report.entity}</p>
       <div className="context-bar">
         <label className="period-control"><CalendarDays size={14} /><span className="sr-only">Reporting period</span><select aria-label="Reporting period" value={report.period} onChange={event => onPeriod(event.target.value as Period)} disabled={busy}><option value="2026-09">Sep 2026</option><option value="2026-08">Aug 2026</option></select><ChevronDown size={13} /></label>
